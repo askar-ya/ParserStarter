@@ -29,7 +29,7 @@ def start_parser():
     if status != 'finished':
         return
 
-    if datetime.now().hour < 2:
+    if datetime.now().hour < 4:
         return
 
     print('start')
