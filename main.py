@@ -47,4 +47,4 @@ def start_parser():
 
 while True:
     start_parser()
-    time.sleep(60*10)
+    time.sleep(60*20)
