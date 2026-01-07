@@ -32,11 +32,20 @@ def start_parser():
     if datetime.now().hour < 4:
         return
 
+    cursor.execute("select start_time from parser_history where id = 1")
+
+    start_to_day = cursor.fetchone()[0]
+    if start_to_day.day == datetime.now(utc_tz).day:
+        print("already start to day")
+        return
+
     print('start')
+
 
     cursor.execute(
         "update parser_history_authors set state = 'wait' where parser_history_id = 1"
     )
+
 
     cursor.execute(
         f"update parser_history set state = 'running', stop_time = null,"
