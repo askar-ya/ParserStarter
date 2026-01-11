@@ -26,7 +26,7 @@ def start_parser():
     status = cursor.fetchone()[0]
     print(status)
 
-    if status != 'finished':
+    if status != 'scheduled':
         return
 
     if datetime.now().hour < 4:
